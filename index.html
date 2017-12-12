@@ -15,6 +15,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Question 1</h2>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                Option one is this and that&mdash;be sure to include why it's great
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                Option two can be something else and selecting it will deselect option one
+            </label>
+        </div>
+        <div class="radio disabled">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                Option three
+            </label>
+        </div>
+        <button type="button">Submit</button>
+        <span id="result"></span>
+        <br><br>
+        <p>Correct: <span id="correctCount"></span></p>
+        <p>Incorrect: <span id="incorrectCount"></span></p>
+    </div>
 </body>
 </html>
