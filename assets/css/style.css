@@ -1,0 +1,30 @@
+.container{
+    text-align: center;
+}
+
+h1{
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    border: 1px solid;
+    width: 50%;
+}
+
+#display{
+    text-align: center;
+}
+
+#question {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#timeLeft{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.answers{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
