@@ -4,6 +4,7 @@ $(document).ready(function() {
     var questionCount = 3;
     var time = 5;
     var intervalId;
+    var delayId;
 
 
     // Questions: 
@@ -77,7 +78,15 @@ $(document).ready(function() {
         clearInterval(intervalId);
      }
 
+    function nextPage(){
+        setTimeout(function(){console.log("Test Time Out")}, 2000);
+        delayId = setTimeout(showQuestions, 3000);
+    }
+
+    // 
+
     function correctAnswer(x){
+        console.log(questionCount);
         if (x == 1){
             console.log("Correct: " + correct);
             if (questionCount == 3){
@@ -109,7 +118,7 @@ $(document).ready(function() {
 
         }
         stop();
-        setTimeout(showQuestions, 3000);
+        nextPage();
     }
 
     
@@ -134,18 +143,18 @@ $(document).ready(function() {
                 if (answerId == "a1"){
                     stop();
                     correct++;
-                    questionCount--;
                     console.log(questionCount);
-                    correctAnswer(1); // goes to correctAnswer, which displays the answer to the question
+                    correctAnswer(1);
+                    questionCount--; // goes to correctAnswer, which displays the answer to the question
                 }
                 // increase incorrectCount if the answer is incorrect
                 // look into unbind
                 else{
                     stop();
                     incorrect++;
-                    questionCount--;
                     console.log(questionCount);
                     correctAnswer(2); // goes to correctAnswer, which displays the answer to the question
+                    questionCount--;
                 }
                 
                 // correctAnswer();
@@ -173,16 +182,16 @@ $(document).ready(function() {
                 if (answerId == "a3"){
                     stop();
                     correct++;
-                    questionCount--;
                     correctAnswer(1); // goes to correctAnswer, which displays the answer to the question
+                    questionCount--;
                 }
                 // increase incorrectCount if the answer is incorrect
                 // look into unbind
                 else{
                     stop();
                     incorrect++;
-                    questionCount--;
                     correctAnswer(2); // goes to correctAnswer, which displays the answer to the question;
+                    questionCount--;
                 }
                 $("#checkAnswer").off('click');
             })
@@ -208,16 +217,16 @@ $(document).ready(function() {
                 if (answerId == "a3"){
                     stop();
                     correct++;
-                    questionCount--;
                     correctAnswer(1); // goes to correctAnswer, which displays the answer to the question
+                    questionCount--;
                 }
                 // increase incorrectCount if the answer is incorrect
                 // look into unbind
                 else{
                     stop();
                     incorrect++;
-                    questionCount--;
                     correctAnswer(2); // goes to correctAnswer, which displays the answer to the question;
+                    questionCount--;
                 }
                 $("#checkAnswer").off('click');
             })
